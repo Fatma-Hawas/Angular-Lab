@@ -1,5 +1,49 @@
-<div class="text-center">
-    <img style="width:10%;" [src]="StoreLogo">
-    <h1 class="d-inline">{{StoreName}}</h1>
-    <h3>We offer an explicit discount of: {{Discount}}</h3>
+<div class="text-center mt-5 mb-5">
+    <img style="width:6%;" [src]="StoreLogo" class="mt-n3">
+    <h1 class="d-inline">{{StoreName | uppercase}}</h1>
+    <h3 *ngIf="Discount != 'No Discount'">We offer an explicit discount of: {{Discount | percent}}</h3>
+
+    <div *ngIf="IsPurshased ; then table;else message"></div>
+    <ng-template #table>
+        <table class="table table-image">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Img</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of ProductList">
+                <th scope="row">{{item.ID}}</th>
+                <td>{{item.Name}}</td>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.Price}}</td>
+                <td class="w-25"><img src="{{item.Img}}" class="img-fluid img-thumbnail"></td>
+            </tr>
+        </table>
+    </ng-template>
+    <br>
+    <input type="text" [(ngModel)]="ClientName" placeholder="Enter your Name">
+    {{ClientName}}
+    <br><br>
+    <ng-template #message>
+        <h3>Thanks for purchasing from our Store {{ClientName}}</h3>
+    </ng-template>
+    <br>
+    <input type="button" value="Buy" (click)="purshased()">
+    <br><br><br>
+    <div class="row d-flex justify-content-around">
+        <div class="card" *ngFor="let item of ProductList" style="width: 18rem;">
+            <img class="card-img-top" src="{{item.Img}}" alt="Card image cap" style="height: 60%;">
+            <div class="card-body">
+            <h5 class="card-title">{{item.Name}}</h5>
+            <p class="card-text">Quantity: {{item.Quantity}}</p>
+            <p class="card-text">Price: {{item.Price}}</p>
+            <a href="#" class="btn btn-primary">Go</a>
+            </div>
+        </div>
+    </div>
 </div>
