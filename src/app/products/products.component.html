@@ -2,7 +2,7 @@
     <img style="width:6%;" [src]="StoreLogo" class="mt-n3">
     <h1 class="d-inline">{{StoreName | uppercase}}</h1>
     <h3 *ngIf="Discount != 'No Discount'">We offer an explicit discount of: {{Discount | percent}}</h3>
-
+    <br>
     <div *ngIf="IsPurshased ; then table;else message"></div>
     <ng-template #table>
         <table class="table table-image">
@@ -33,7 +33,7 @@
         <h3>Thanks for purchasing from our Store {{ClientName}}</h3>
     </ng-template>
     <br>
-    <input type="button" value="Buy" (click)="purshased()">
+    <input type="button" class="btn btn-primary" value="Buy" (click)="purshased()">
     <br><br><br>
     <div class="row d-flex justify-content-around">
         <div class="card" *ngFor="let item of ProductList" style="width: 18rem;">

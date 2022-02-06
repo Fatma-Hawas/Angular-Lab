@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import * as DiscountOffers from "src/app/sharedClassesAndTypes/DiscountOffers ";
 import {IProduct} from "src/app/sharedClassesAndTypes/IProduct";
 import {ICategory} from "src/app/sharedClassesAndTypes/ICategory";
+import {ProductServiceService} from "src/app/service/product-service.service";
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,7 @@ import {ICategory} from "src/app/sharedClassesAndTypes/ICategory";
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService:ProductServiceService) {}
 
   Discount=DiscountOffers.DiscountOffers.DiscountOffers2;
   StoreName:string="Fatma Store";
@@ -21,6 +22,7 @@ export class ProductsComponent implements OnInit {
   CategoryList:ICategory={ID:1, Name:"Phones"};
   ClientName:string="Ahmed";
   IsPurshased:Boolean=true;
+  productServiceList:any;
 
   purshased(){
     if(this.IsPurshased){
@@ -28,6 +30,10 @@ export class ProductsComponent implements OnInit {
     }
     else
     this.IsPurshased = true;
+  }
+
+  renderValues(){
+    this.productServiceList=this.productService.GetAllProducts();
   }
 
   ngOnInit(): void {

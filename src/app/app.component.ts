@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import {ProductsComponent} from "../app/products/products.component";
 
 @Component({
   selector: 'myfirstapp-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lab';
+  @ViewChild(ProductsComponent) child?:ProductsComponent;
+
+  IsPurshased:Boolean=false;
+  ProductList:any;
+
+  renderValues(){
+    this.child?.renderValues();
+    if(this.IsPurshased){
+      this.IsPurshased = false;
+    }
+    else
+    this.IsPurshased = true;
+    this.ProductList=this.child?.ProductList;
+  }
 }
