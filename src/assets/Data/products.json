@@ -1,0 +1,5 @@
+[
+    {"ID":1, "Name":"IPhone", "Quantity":23, "Price":88, "Img":"..//src/assets/iphone.jpg"},
+    {"ID":2, "Name":"Laptop", "Quantity":10, "Price":15, "Img":"..//src/assets/lap.jpg"},
+    {"ID":3, "Name":"Camera", "Quantity":9, "Price":7, "Img":"..//src/assets/camera.png"}
+]

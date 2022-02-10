@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as DiscountOffers from "src/app/sharedClassesAndTypes/DiscountOffers ";
 import {IProduct} from "src/app/sharedClassesAndTypes/IProduct";
 import {ICategory} from "src/app/sharedClassesAndTypes/ICategory";
@@ -14,8 +14,6 @@ export class ProductsComponent implements OnInit {
   constructor(private productService:ProductServiceService) {}
 
   Discount=DiscountOffers.DiscountOffers.DiscountOffers2;
-  StoreName:string="Fatma Store";
-  StoreLogo:string="..//src/assets/img.jpg";
   ProductList:IProduct[]=[{ID:1, Name:"IPhone", Quantity:23, Price:88, Img:"..//src/assets/iphone.jpg"},
   {ID:2, Name:"Laptop", Quantity:10, Price:15, Img:"..//src/assets/lap.jpg"},
   {ID:3, Name:"Camera", Quantity:9, Price:7, Img:"..//src/assets/camera.png"}];
@@ -34,9 +32,9 @@ export class ProductsComponent implements OnInit {
 
   renderValues(){
     this.productServiceList=this.productService.GetAllProducts();
+    console.log(this.productService.GetProductById(1));
   }
 
   ngOnInit(): void {
   }
-
 }

@@ -1,0 +1,12 @@
+<br>
+<div class="row justify-content-around">
+    <div class="card" *ngFor="let item of PostList" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">ID: {{item.id}}</h5>
+            <p class="card-text"><span class="h5">Title: </span>{{item.title}}</p>
+            <p class="card-text"><span class="h5">Body: </span>{{item.body}}</p>
+            <a class="btn btn-primary" (click)="sendID(item)" routerLink="/comments">View Comments</a>
+        </div>
+    </div>
+</div>
+<br>

@@ -1,0 +1,30 @@
+<img src="..//src/assets/beach3.jpg" class="mb-n5" style="width:100%">
+<h1 class="text-center text-dark mt-n5">{{name}}</h1>
+<h2 class="text-center text-dark mt-n2">Angular Lab</h2>
+<br>
+<div class="text-center">
+    <input type="button" class="btn btn-primary " value="Display Data" (click)="renderValues()">
+    <br><br>
+    <div *ngIf="IsPurshased">
+        <br>
+        <table class="table table-image">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Img</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of ProductList">
+                <th class="align-middle" scope="row">{{item.ID}}</th>
+                <td class="align-middle">{{item.Name}}</td>
+                <td class="align-middle">{{item.Quantity}}</td>
+                <td class="align-middle">{{item.Price}}</td>
+                <td class="w-25"><img src="{{item.Img}}" class="img-fluid img-thumbnail"></td>
+            </tr>
+        </table>
+    </div>
+</div>

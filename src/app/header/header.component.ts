@@ -10,11 +10,11 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  name:string="Fatma Hawas";
+  StoreName:string="Fatma Store";
+  StoreLogo:string="..//src/assets/img.jpg";
 
   CategoryList1:ICategory={ID:1, Name:"Phones"};
   CategoryList2:ICategory={ID:2, Name:"Laptops"};
-
   Category=[this.CategoryList1.Name,this.CategoryList2.Name];
 
   ngOnInit(): void {

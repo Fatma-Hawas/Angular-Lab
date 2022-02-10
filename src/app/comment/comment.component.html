@@ -1,0 +1,13 @@
+<br>
+<div class="row justify-content-around">
+    <div class="card" *ngFor="let item of CommentList" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Post ID: {{item.postId}}</h5>
+            <p class="card-text"><span class="h5">ID: </span>{{item.id}}</p>
+            <p class="card-text"><span class="h5">Name: </span>{{item.name}}</p>
+            <p class="card-text"><span class="h5">Email: </span>{{item.email}}</p>
+            <p class="card-text"><span class="h5">Body: </span>{{item.body}}</p>
+        </div>
+    </div>
+</div>
+<br>
