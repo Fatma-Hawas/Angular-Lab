@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {CommentServiceService} from "src/app/service/comment-service.service";
 import {PostServiceService} from '../service/post-service.service';
 
@@ -9,7 +10,7 @@ import {PostServiceService} from '../service/post-service.service';
 })
 export class CommentComponent implements OnInit {
 
-  constructor(private commentService:CommentServiceService, private postService:PostServiceService) { }
+  constructor(private commentService:CommentServiceService, private postService:PostServiceService, private router:Router) { }
 
   CommentList:any;
   CommentID?:number;
@@ -19,6 +20,10 @@ export class CommentComponent implements OnInit {
     this.commentService.GetAllCommentsJson(this.CommentID).subscribe(commentData=>{
       this.CommentList=commentData;
     })
+  }
+
+  goToPosts(){
+    this.router.navigate(["/posts",{id:this.CommentID}])
   }
 
 }

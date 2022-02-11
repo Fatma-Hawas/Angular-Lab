@@ -1,6 +1,12 @@
 <div class="text-center mt-5 mb-5">
     <h3 *ngIf="Discount != 'No Discount'">We offer an explicit discount of: {{Discount | percent}}</h3>
     <br>
+    <button class="btn btn-primary" (click)="goToDiscount()">Products with discount</button>
+    &nbsp;
+    <button class="btn btn-primary" (click)="goToNoDiscount()">Products without discount</button>
+    <br>
+    <router-outlet></router-outlet>
+    <br>
     <div *ngIf="IsPurshased ; then table;else message"></div>
     <ng-template #table>
         <table class="table table-image">
