@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { DiscountComponent } from './discount/discount.component';
 import { NoDiscountComponent } from './no-discount/no-discount.component';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,15 @@ import { NoDiscountComponent } from './no-discount/no-discount.component';
     RegisterComponent,
     LoginComponent,
     DiscountComponent,
-    NoDiscountComponent
+    NoDiscountComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

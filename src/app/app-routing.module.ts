@@ -9,7 +9,8 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {DiscountComponent} from "./discount/discount.component";
-import {NoDiscountComponent} from "./no-discount/no-discount.component"
+import {NoDiscountComponent} from "./no-discount/no-discount.component";
+import {NotesComponent} from "./notes/notes.component";
 
 const routes: Routes = [
   {path:"",component:HomeComponent,pathMatch:"full"},
@@ -24,6 +25,7 @@ children:[
   {path:"comments",component:CommentComponent},
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
+  {path:"notes",component:NotesComponent},
   {path:"**",component:PageNotFoundComponent}
 ];
 
